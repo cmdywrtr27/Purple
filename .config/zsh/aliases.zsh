@@ -1,0 +1,96 @@
+#    _   _    ___   _   ___ ___ ___
+#   /_\ | |  |_ _| /_\ / __| __/ __|
+#  / _ \| |__ | | / _ \\__ \ _|\__ \
+# /_/ \_\____|___/_/ \_\___/___|___/
+#
+
+alias rm="echo 'Maybe try trash-put? Or "TP"'"
+alias recon="openbox --reconfigure && echo 'OK, I\'m reloaded!'"
+#alias menu='obmenu-generator -s -c'
+alias flex='jfetch'
+
+alias updatemirrors='sudo reflector --verbose --country "United States" -l 5 --sort rate --save /etc/pacman.d/mirrorlist'
+alias mirrorx='sudo reflector --age 6 --latest 10 --fastest 10 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist'
+
+#alias ristretto='devour ristretto'
+#alias sxiv='devour sxiv'
+#alias mpv='devour mpv'
+#alias vlc='devour vlc'
+#alias zathura='devour zathura'
+
+alias figlet='figlet -S -f Stforek'
+alias sshserver='ssh josh@192.168.1.118'
+alias sshrouter='ssh root@192.168.1.1'
+alias wifi='nmtui'
+alias aedit='$EDITOR $ZSH_DIR/aliases.zsh'
+alias fedit='$EDITOR $ZSH_DIR/functions.zsh'
+alias vedit='$EDITOR $HOME/.vimrc'
+alias aliass='cat /home/josh/.config/zsh/aliases.zsh'
+#alias tmux='tmux -2'
+alias fixkeys='sudo pacman-key --refresh-keys'
+alias please='sudo !!'
+alias tp='trash-put'
+alias gc='git clone'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias dc='docker-compose'
+alias sr='sudo reboot'
+alias ss='sudo shutdown -h now'
+alias sp='sudo pacman -S --noconfirm'
+#alias cleanup='sudo pacman -rns $(pacman -qtdq)'
+#alias find='fd'
+#alias diff='diff-so-fancy'
+alias x='exit'
+alias bk='cd "$OLDPWD"'
+alias lf='lfub'
+alias load='xrdb -load ~/.Xresources'
+alias merge='xrdb -merge ~/.Xresources'
+alias updategrub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+alias l='exa -al --grid --header --icons --color=always --git --sort=name'
+alias ls='exa -l --grid --header --icons --color=always --git --sort=name'
+alias ll='exa -al --grid --header --icons --color=always --git --sort=name --group-directories-first'
+alias lls='exa -al --grid --header --icons --color=always --git --sort=size --group-directories-first'
+alias lr='exa -alr --grid --header --icons --color=always --git --sort=name --group-directories-first'
+alias ld='exa -al --grid --header --icons --color=always --git --sort=date'
+alias l.='exa -a | grep -E "^\." --grid --header --icons --color=always --git'
+
+alias vi='vim'
+alias icon='sudo gtk-update-icon-cache /usr/share/icons/* && sudo gtk-update-icon-cache $HOME/.icons/*'
+alias font='fc-cache -f -v'
+#alias grep='() { $(whence -p grep) --color=auto $@ }'
+#alias erep='() { $(whence -p egrep) --color=auto $@ }'
+alias pgrep='ps aux | grep'
+alias grep='grep --color=auto'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias wget='wget -c'
+
+alias enable_vbox='sudo modprobe vboxdrv vboxnetadp vboxnetflt vboxpci'
+alias disable_vbox='sudo modprobe -r vboxdrv vboxnetadp vboxnetflt vboxpci'
+
+alias mpd_start='systemctl start mpd.service mpdscribble.service --user'
+alias mpd_stop='systemctl stop mpd.service mpdscribble.service --user'
+alias mute='amixer -D pulse set Master 1+ mute'
+alias unmute='amixer -D pulse set Master 1+ unmute'
+
+alias ym='youtube-dl -xic --audio-format mp3 --add-metadata'
+alias yt='youtube-dl -xic --add-metadata'
+alias ytmp3='youtube-dl -x --audio-format mp3'
+
+alias pingg='curl ipinfo.io/ip && ping -c 5 -q google.com'
+alias speed_test='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+alias exl='expressvpn list all'
+alias exd='expressvpn disconnect'
+alias exc='expressvpn connect $1'
+alias exs='expressvpn status'
+
+#alias gcl='git clone --depth 1'
+#alias gi='git init'
+#alias ga='git add'
+#alias gc='git commit -m'
+#alias gp='git push origin master'
