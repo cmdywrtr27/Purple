@@ -1,24 +1,24 @@
 format = """
 $status\
 ${custom.icon}\
-[](bg:#292d3e fg:#d8e2dc)\
-[](bg:#ffcad4 fg:#292d3e)\
+[](bg:#292d3e fg:#9966ff)\
+[](bg:#66ccff fg:#292d3e)\
 $directory\
-[](bg:#292d3e fg:#ffcad4)\
-[](bg:#ffe5d9 fg:#292d3e)\
+[](bg:#292d3e fg:#66ccff)\
+[](bg:#66ff99 fg:#292d3e)\
 $time\
-[](bg:#292d3e fg:#ffe5d9)\
-[](bg:#f4acb7 fg:#292d3e)\
+[](bg:#292d3e fg:#66ff99)\
+[](bg:#ffe666 fg:#292d3e)\
 $cmd_duration\
-[](bg:#292d3e fg:#f4acb7)\
-[](bg:#ffddd2 fg:#292d3e)\
+[](bg:#292d3e fg:#ffe666)\
+[](bg:#ff6680 fg:#292d3e)\
 $git_branch\
 $git_status\
-[ ](fg:#ffddd2)\
+[ ](fg:#ff6680)\
 """
 
 [status]
-style = "fg:#292d3e bg:#d8e2dc"
+style = "fg:#292d3e bg:#9966ff"
 symbol = ""
 success_symbol = ""
 format = '[ $symbol ]($style)'
@@ -27,21 +27,21 @@ disabled = false
 
 [username]
 show_always = false
-style_user = "bg:#d8e2dc"
-style_root = "bg:#d8e2dc"
+style_user = "bg:#9966ff"
+style_root = "bg:#9966ff"
 format = '[$user]($style)'
 
 [hostname]
 ssh_only = false
-format = "[@$hostname ](bg:#d8e2dc)"
+format = "[@$hostname ](bg:#9966ff)"
 trim_at = "."
 disabled = true
 
 [custom.arch]
 description = "Display arch logo"
 when = "true"
-style = "fg:#292d3e bg:#d8e2dc"
-format = '[$symbol(bg:#d8e2dc)]($style) '
+style = "fg:#292d3e bg:#9966ff"
+format = '[$symbol(bg:#9966ff)]($style) '
 symbol = " "
 
 [custom.icon]
@@ -66,30 +66,32 @@ else
 fi
 """
 when = "true"
-style = "bold fg:#292d3e bg:#d8e2dc"
+style = "bold fg:#292d3e bg:#9966ff"
 format = '[ $output  ]($style)'
 
 [directory]
-style = "bold fg:#292d3e bg:#ffcad4"
-format = '[ $path ]($style)'
-truncation_length = 6
+style = "bold fg:#292d3e bg:#66ccff"
+format = '[ $path ]($style)[$read_only]($read_only_style)'
+truncation_length = 3
 truncation_symbol = ".../"
+read_only = '🔒'
+read_only_style = "bold fg:#292d3e bg:#66ccff"
 use_os_path_sep = true
 home_symbol = "~"
 truncate_to_repo = true
 
 [git_branch]
-symbol = " "
-style = "bold fg:#292d3e bg:#ffddd2"
+symbol = "   "
+style = "bold fg:#292d3e bg:#ff6680"
 format = '[ $symbol $branch]($style)'
 
 [git_status]
-style = "bold fg:#292d3e bg:#d8e2dc"
+style = "bold fg:#292d3e bg:#ff6680"
 format = '[ ($all_status) ]($style)'
 
 [custom.docker]
 description = "Shows the docker symbol if the current directory has Dockerfile or docker-compose.yml files"
-style = "bg:#f4acb7"
+style = "bg:#ffe666"
 format = '[$symbol]($style)'
 symbol = " 🐳 "
 files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
@@ -98,12 +100,12 @@ disabled = true
 
 [cmd_duration]
 min_time = 500
-style = "fg:#292d3e bg:#f4acb7"
+style = "fg:#292d3e bg:#ffe666"
 format = "[ 󰔛 $duration ]($style)"
 disabled = true
 
 [time]
 disabled = true
 time_format = "%l:%M %P"
-style = "fg:#292d3e bg:#ffe5d9"
+style = "fg:#292d3e bg:#66ff99"
 format = '[ $time ]($style)'
