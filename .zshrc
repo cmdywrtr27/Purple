@@ -25,7 +25,8 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*' use-cache yes
 zstyle ':completion:*' cache-path "$ZSH_CACHEDIR"
 
-zstyle ':completion:*:vim:*' file-sort mtime
+#zstyle ':completion:*:vim:*' file-sort mtime
+zstyle ':completion:*:vim:*' file-sort modification
 zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories group-order
 zstyle ':completion:*:messages' format '%B%F{red}--%f%F{yellow} %d%f %F{red}--%f%b'
 zstyle ':completion:*:warnings' format '%B%F{red}--%f%F{yellow} No Matches Found%f %F{red}--%f%b'
@@ -72,15 +73,16 @@ source $ZSH_DIR/functions.zsh
 source $ZSH_PLUGINDIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH_PLUGINDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGINDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
+#source $ZSH_PLUGINDIR/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source $ZSH_DIR/syntax.zsh
 
 # Prompt
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 #source $ZSH_THEMEDIR/agkozak.zsh
 #source $ZSH_THEMEDIR/agnoster-gaps.zsh
 #source $ZSH_THEMEDIR/lines.zsh
 #source $ZSH_THEMEDIR/minimal.zsh
 #source $ZSH_THEMEDIR/right.zsh
-source $ZSH_THEMEDIR/ninja.zsh
+#source $ZSH_THEMEDIR/ninja.zsh
 
 source ~/.config/fzf/fzf.zsh
