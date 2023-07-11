@@ -72,7 +72,7 @@ format = '[ $output  ]($style)'
 [directory]
 style = "bold fg:#292d3e bg:#66ccff"
 format = '[ $path ]($style)[$read_only]($read_only_style)'
-truncation_length = 3
+truncation_length = 8
 truncation_symbol = ".../"
 read_only = '🔒'
 read_only_style = "bold fg:#292d3e bg:#66ccff"
@@ -81,7 +81,7 @@ home_symbol = "~"
 truncate_to_repo = true
 
 [git_branch]
-symbol = "   "
+symbol = ""
 style = "bold fg:#292d3e bg:#ff6680"
 format = '[ $symbol $branch]($style)'
 
