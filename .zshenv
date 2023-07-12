@@ -6,7 +6,7 @@ export VISUAL=vim
 export SVN_EDITOR=vim
 export BROWSER=brave
 export FILEMANAGER=pcmanfm
-export FZF_DEFAULT_OPS="--height 40% --prompt= --pointer= --marker= --ellipsis=..."
+export FZF_DEFAULT_OPS="--extended"
 export PAGER=less
 export LESS="-R"
 export MANPAGER='/bin/zsh -c "vim -Rn -c \"set buftype=nofile showtabline=0 ft=man ts=4 nomod nolist nornu nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
@@ -20,9 +20,7 @@ export ZSH_CACHEDIR=$HOME/.cache/zsh
 export ZSH_THEMEDIR=$HOME/.config/zsh/themes
 export ZSH_PLUGINDIR=$HOME/.config/zsh/plugins
 
-eval $(dircolors -b)
 export TERM=xterm-256color
-#export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
@@ -202,21 +200,3 @@ export LF_ICONS="\
     *.pdf=:\
     *.nix=:\
     "
-
-# export EXA_COLORS="\
-#     uu=36:\
-#     gu=37:\
-#     sn=32:\
-#     sb=32:\
-#     da=34:\
-#     ur=34:\
-#     uw=35:\
-#     ux=36:\
-#     ue=36:\
-#     gr=34:\
-#     gw=35:\
-#     gx=36:\
-#     tr=34:\
-#     tw=35:\
-#     tx=36:
-#     "

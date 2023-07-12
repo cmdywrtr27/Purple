@@ -78,9 +78,7 @@ source $ZSH_DIR/syntax.zsh
 
 # Prompt
 eval "$(starship init zsh)"
-#source $ZSH_THEMEDIR/agkozak.zsh
 #source $ZSH_THEMEDIR/agnoster-gaps.zsh
-#source $ZSH_THEMEDIR/lines.zsh
 #source $ZSH_THEMEDIR/minimal.zsh
 #source $ZSH_THEMEDIR/right.zsh
 #source $ZSH_THEMEDIR/ninja.zsh

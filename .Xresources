@@ -27,7 +27,7 @@ URxvt.letterSpace : 0
 
 ! Color -------------------------------------
 
-#include "/home/josh/.urxvt/purify.Xresources"
+#include "/home/josh/.urxvt/palenight.Xresources"
 
 ! Settings ----------------------------------
 

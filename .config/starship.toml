@@ -62,7 +62,7 @@ elif [[ "$PWD" = "$HOME/Videos" ]]; then
 elif [[ "$PWD" = "$HOME/.local/bin" ]]; then
     echo " "
 else
-    echo " "
+    echo "󰝰 "
 fi
 """
 when = "true"
@@ -96,7 +96,7 @@ format = '[$symbol]($style)'
 symbol = " 🐳 "
 files = ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"]
 when = """ command -v docker &> /dev/null; exit (echo $?); """
-disabled = true
+disabled = false
 
 [cmd_duration]
 min_time = 500
@@ -108,4 +108,4 @@ disabled = true
 disabled = true
 time_format = "%l:%M %P"
 style = "fg:#292d3e bg:#66ff99"
-format = '[ $time ]($style)'
+format = '[  $time ]($style)'

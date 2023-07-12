@@ -17,19 +17,19 @@ weather() {
 }
 
 # Translate a word (translate car french)
-#translate() {
-#    TRANSLATED=`lynx -dump "http://dictionary.reference.com/browse/${1}" | grep -i -m 1 -w "${2}:" | sed 's/^[ \t]*//;s/[ \t]*$//'`
-#    if [ ${#TRANSLATED} != 0 ]; then
-#        echo "\"${1}\" in ${TRANSLATED}"
-#    else
-#        echo "Sorry, I can not translate \"${1}\" to ${2}"
-#    fi
-#}
+translate() {
+    TRANSLATED=`lynx -dump "http://dictionary.reference.com/browse/${1}" | grep -i -m 1 -w "${2}:" | sed 's/^[ \t]*//;s/[ \t]*$//'`
+    if [[ ${#TRANSLATED} != 0 ]]; then
+        echo "\"${1}\" in ${TRANSLATED}"
+    else
+        echo "Sorry, I can not translate \"${1}\" to ${2}"
+    fi
+}
 
 # Define a word (define selfish)
 define() {
     lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep -m 3 -w "*" | sed 's/;/ -/g' | cut -d- -f1 > /tmp/templookup.txt
-    if [ -s  /tmp/templookup.txt ]; then
+    if [[ -s  /tmp/templookup.txt ]]; then
         until ! read response
             do
             echo "${response}"
@@ -37,12 +37,12 @@ define() {
         else
             echo "Sorry, the term \"${1} \" wasn't found"
     fi
-rm -f /tmp/templookup.txt
+trash-put /tmp/templookup.txt
 }
 
 # Extract tar and zip files (extract "filename")
 extract() {
-    if [ -f $1 ]; then
+    if [[ -f $1 ]]; then
         case $1 in
             *.tar.bz2)   tar xvjf $1 ;;
             *.tar.gz)    tar xvzf $1 ;;
@@ -64,7 +64,7 @@ extract() {
 
 # Copy and go (cpg "filename")
 cpg() {
-    if [ -d "$2" ]; then
+    if [[ -d "$2" ]]; then
         cp $1 $2 && cd $2
     else
         cp $1 $2
@@ -73,7 +73,7 @@ cpg() {
 
 # Move and go (mvg "filename")
 mvg() {
-    if [ -d "$2" ]; then
+    if [[ -d "$2" ]]; then
         mv $1 $2 && cd $2
     else
         mv $1 $2
@@ -104,7 +104,7 @@ dirsize() {
     local size
     size=$(du -sh "$directory" 2> /dev/null | cut -f1)
 
-    if [ -n $size ]; then
+    if [[ -n $size ]]; then
         echo "Size of $directory: $size"
     else
         echo "Failed to retrieve size of $directory."
@@ -125,35 +125,14 @@ chpwd() {
 update() {
 echo "Updating mirrors..."
 sudo reflector --age 6 --latest 10 --fastest 10 --sort rate --protocol https --save /etc/pacman.d/mirrorlist
+sleep 2
 echo "Updating repos"
 sudo pacman -Syyy
+sleep 2
 yay -Syyy
+sleep 2
 echo "Updating system"
-sudo pacman -Syu --noconfirm
 yay -Syu --noconfirm && yay -Qqe > ~/Documents/arch_packages.lst
-}
-
-# Run with sudo (strg+x,s)
-run-with-sudo() {
-    LBUFFER="sudo $LBUFFER"
-}
-zle -N run-with-sudo
-bindkey '^Xs' run-with-sudo
-
-# Top ten memory hogs (memtop)
-memtop() {
-    ps -eorss,args | gsort -nr | gpr -TW$COLUMNS | ghead
-}
-zle -N memtop
-
-# Show newest files (newest)
-newest() {
-    find . -type f -printf '%TY-%Tm-%Td %TT %p\n' | grep -v cache | grep -v ".hg" | grep -v ".git" | sort -r | less
-}
-
-# Rename all files in a directory
-massmove() {
-    ls > ls; paste ls ls > ren; vi ren; sed 's/^/mv /' ren|bash; rm ren ls
 }
 
 # Put a clock in top right corner (what-time-is-it)
@@ -165,20 +144,4 @@ what-time-is-it() {
         date
         tput rc
     done &
-}
-
-# Create new script with shebang and make it executable (shebang "filename")
-shebang() {
-    if i=$(which $1);
-    then
-        printf '#!/usr/bin/env %s\n\n' $1 > $2 && chmod 755 $2 && vim + $2 && chmod 755 $2;
-    else
-        echo "'which' could not find $1, is it in your \$PATH?";
-    fi;
-    rehash
-}
-
-# Translate via Google Language Tools (translate "word")
-translate() {
-    wget -qO- "http://ajax.googleapis.com/ajax/services/language/translate?v=1.0&q=$1&langpair=$2|${3:-en}" | sed 's/.*"translatedText":"\([^"]*\)".*}/\1\n/'
 }
