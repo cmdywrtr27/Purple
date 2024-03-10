@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   viewBox="0 0 16 16"
+   id="svg2230"
+   sodipodi:docname="folder-pictures-symbolic.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2232"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="13.045525"
+     inkscape:cx="13.031289"
+     inkscape:cy="8.3553556"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="0"
+     inkscape:window-y="36"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2230">
+    <inkscape:grid
+       type="xygrid"
+       id="grid2351"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2226">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect19301"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,1,1,0,0.5,0,1 @ F,0,0,1,0,0,0,1 @ F,0,1,1,0,0.5,0,1 @ F,0,0,1,0,0,0,1 | F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="0.5"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="true"
+       hide_knots="false" />
+    <style
+       id="current-color-scheme"
+       type="text/css">.ColorScheme-Text { color:#dedede; } .ColorScheme-Text { color:#dedede; }</style>
+  </defs>
+  <g
+     id="g16"
+     transform="matrix(0.33030808,0,0,0.32190297,-3.1721421,-2.8188262)">
+    <path
+       style="color:#dedede;fill:currentColor;stroke-width:3.02747"
+       d="m 22.086005,37.873528 c -0.484038,-0.140863 -1.005152,0.02517 -1.31861,0.419844 L 9.6035862,52.248124 33.711024,52.242183 22.68913,38.269682 c -0.157341,-0.188887 -0.36732,-0.326775 -0.603159,-0.396119 z"
+       id="path16" />
+    <path
+       style="color:#dedede;fill:currentColor;stroke-width:3.02747"
+       d="m 42.539195,28.86798 c -0.2149,0.06293 -0.403709,0.1935 -0.538049,0.372469 l -10.678422,14.711638 6.291101,8.295981 H 58.043212 L 43.710018,29.311407 c -0.246596,-0.393753 -0.725257,-0.57501 -1.170777,-0.443531 z"
+       id="path15" />
+    <path
+       style="color:#dedede;fill:currentColor;stroke-width:3.58303"
+       d="m 18.300201,18.076336 c -2.968292,0 -5.374557,2.406251 -5.374557,5.374544 0,2.968292 2.406265,5.374558 5.374557,5.374558 2.968292,0 5.374544,-2.406266 5.374544,-5.374558 0,-2.968293 -2.406252,-5.374544 -5.374544,-5.374544 z"
+       id="path2228-3" />
+  </g>
+</svg>

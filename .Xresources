@@ -1,0 +1,85 @@
+! __  __
+! \ \/ /_ __ ___ ___  ___  _   _ _ __ ___ ___ ___
+!  \  /| '__/ _ / __|/ _ \| | | | '__/ __/ _ / __|
+!  /  \| | |  __\__ | (_) | |_| | | | (_|  __\__ \
+! /_/\_|_|  \___|___/\___/ \__,_|_|  \___\___|___/
+!
+
+! Font --------------------------------
+
+#define font1 FiraCode Nerd Font
+#define font2 RobotoMono Nerd Font
+#define font3 Font Awesome 5 Free Regular
+#define font4 Material Icons
+
+URxvt.font : xft:font1:style=Regular:pixelsize=14, xft:font2:style=Regular:pixelsize=12, xft:font3:pixelsize=12, xft:font4:style=Regular:pixelsize=12
+!URxvt.boldFont : xft:font1:style=Bold:pixelsize=14, xft:font2:style=Bold:pixelsize=12:minspace=false, xft:font3:pixelsize=12, xft:font4:pixelsize=12
+!URxvt.italicFont : xft:font1:style=Italic:pixelsize=14, xft:font2:style=Italic:pixelsize=12:minspace=false, xft:font3:pixelsize=12, xft:font4:pixelsize=12
+!URxvt.boldItalicFont : xft:font1:style=BoldItalic:pixelsize=14, xft:font2:style=BoldItalic:pixelsize=12:minspace=false, xft:font3:pixelsize=12, xft:font4:pixelsize=12
+
+Xft.dpi           : 96
+Xft.antialias     : true
+Xft.rgba          : rgb
+Xft.autohint      : true
+Xft.lcdfilter     : lcddefault
+Xft.hinting       : true
+Xft.hintstyle     : hintfull
+URxvt.letterSpace : 0
+URxvt.allow_bold  : true
+
+! Color -------------------------------
+
+#include "/home/josh/.urxvt/palenight.Xresources"
+
+! Settings ----------------------------
+
+URxvt.iconFile             : /home/josh/.icons/Custom/terminal.svg
+!URxvt.backgroundPixmap     : /home/josh/Pictures/purp.png
+URxvt.inheritPixmap        : true
+URxvt.windowName           : urxvt
+URxvt.windowTitle          : urxvt
+URxvt.termName             : xterm-256color
+URxvt.borderLess           : false
+URxvt.internalBorder       : 20
+URxvt.externalBorder       : 20
+URxvt.geometry             : 86x28
+URxvt.skipBuiltinGlyphs    : false
+URxvt.scrollTtyKeypress    : true
+URxvt.scrollTtyOutput      : false
+URxvt.scrollWithBuffer     : true
+URxvt.scrollstyle          : plain
+URxvt.scrollBar            : floating
+URxvt.urgentOnBell         : true
+URxvt.visualBell           : true
+URxvt.saveLines            : 65535
+URxvt.mouseWheelScrollPage : false
+URxvt.cursorBlink          : true
+URxvt.cursorBlock          : true
+URxvt.transparent          : false
+!URxvt.depth                : 32
+URxvt.shading              : 0
+URxvt.secondaryScreen      : 1
+URxvt.secondaryScroll      : 0
+URxvt.iso14755             : false
+URxvt.iso14755_52          : false
+Xcursor.theme              : Bibata-Modern-Ice
+Xcursor.size               : 24
+
+! Extensions --------------------------
+
+URxvt.perl-lib        : /usr/lib/urxvt/perl
+URxvt.perl-ext-common : clipboard,font-size
+
+! Clipboard [Ctrl+Shift+C/V] ----------
+URxvt.clipboard.copycmd  : xclip -i -selection clipboard
+URxvt.clipboard.pastecmd : xclip -o -selection clipboard
+URxvt.keysym.C-S-C       : perl:clipboard:copy
+URxvt.keysym.C-S-V       : perl:clipboard:paste
+
+! Font-size ---------------------------
+URxvt.keysym.C-Up     : font-size:increase
+URxvt.keysym.C-Down   : font-size:decrease
+URxvt.keysym.C-S-Up   : font-size:incglobal
+URxvt.keysym.C-S-Down : font-size:decglobal
+URxvt.keysym.C-equal  : font-size:reset
+URxvt.keysym.C-slash  : font-size:show

@@ -1,0 +1,84 @@
+format = """
+[](fg:#5e7da6 bg:black)\
+$status\
+${custom.icon}\
+[](fg:#5e7da6 bg:black)\
+[](fg:black bg:#82ace6)\
+$directory\
+[](fg:#82ace6 bg:black)\
+[](fg:black bg:#7d95b0)\
+$time\
+[](fg:#7d95b0 bg:black)\
+[](fg:black bg:#e6e6e6)\
+$cmd_duration\
+[](fg:#e6e6e6 bg:black)\
+[](fg:black bg:#526273)\
+$git_branch\
+$git_status\
+[ ](fg:#526273)\
+"""
+
+[status]
+style = "bold fg:black bg:#5e7da6"
+symbol = ""
+success_symbol = ""
+format = '[ $symbol ]($style)'
+map_symbol = false
+disabled = false
+
+[custom.icon]
+description = "Display icon for each home folder"
+command = """
+if [[ "$PWD" = "$HOME" ]]; then
+    echo "󰣇 "
+elif [[ "$PWD" = "$HOME/Documents" ]]; then
+    echo "󰈙 "
+elif [[ "$PWD" = "$HOME/Downloads" ]]; then
+    echo "󰜮 "
+elif [[ "$PWD" = "$HOME/Music" ]]; then
+    echo " "
+elif [[ "$PWD" = "$HOME/Pictures" ]]; then
+    echo " "
+elif [[ "$PWD" = "$HOME/Videos" ]]; then
+    echo "󰿎 "
+elif [[ "$PWD" = "$HOME/.local/bin" ]]; then
+    echo ""
+else
+    echo "🗁 "
+fi
+"""
+when = "true"
+style = "bold fg:black bg:#5e7da6"
+format = '[ $output  ]($style)'
+
+[directory]
+style = "bold fg:black bg:#82ace6"
+format = '[ $path ]($style)[$read_only]($read_only_style)'
+truncation_length = 8
+truncation_symbol = ".../"
+read_only = '🔒'
+read_only_style = "bold fg:black bg:#82ace6"
+use_os_path_sep = true
+home_symbol = "~"
+truncate_to_repo = true
+
+[time]
+disabled = false
+time_format = "%l:%M %P"
+style = "bold fg:black bg:#7d95b0"
+format = '[  $time ]($style)'
+
+[cmd_duration]
+min_time = 500
+style = "bold fg:black bg:#e6e6e6"
+format = "[ 󰔛 $duration ]($style)"
+disabled = true
+
+[git_branch]
+symbol = ""
+style = "bold fg:black bg:#526273"
+format = '[ $symbol $branch]($style)'
+
+[git_status]
+style = "bold fg:black bg:#526273"
+format = '[ ($all_status) ]($style)'
