@@ -1,0 +1,87 @@
+live_config_reload = true
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.primary]
+background = "#292d3e"
+foreground = "#ffffff"
+
+[colors.normal]
+black = "#292d3e"
+red = "#f07178"
+green = "#c3e88d"
+yellow = "#ffcb6b"
+blue = "#82aaff"
+magenta = "#c792ea"
+cyan = "#89ddff"
+white = "#e6e6e6"
+
+[colors.bright]
+black = "#434758"
+red = "#ff8b92"
+green = "#ddffa7"
+yellow = "#ffe585"
+blue = "#9cc4ff"
+magenta = "#e1acff"
+cyan = "#a3f7ff"
+white = "#ffffff"
+
+[cursor]
+blink_interval = 500
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
+
+#[env]
+#TERM = "xterm-256color"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Bold Italic"
+
+[font]
+size = 12.0
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+hide_when_typing = false
+
+[scrolling]
+history = 10000
+
+[window]
+decorations = "full"
+dynamic_padding = true
+opacity = 1.0
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 86
+lines = 28
+
+[window.padding]
+x = 0
+y = 0
