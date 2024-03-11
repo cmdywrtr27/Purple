@@ -1,0 +1,5 @@
+#!/bin/bash
+
+~/.local/bin/rxvt -g 96x16 -e ncmpcpp -c ~/.config/ncmpcpp/config
+
+exit 0

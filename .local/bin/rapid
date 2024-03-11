@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Output directory for screenshots
+output_dir="$HOME/Pictures/Screenshots"
+
+notify_user() {
+    if [[ -e "$output_dir" ]]; then
+        notify-send -u low -i $HOME/.icons/Custom/scrot.svg "25 Screenshots Taken and Saved to ~/Pictures/Screenshots"
+    else
+        notify-send -u low -i $HOME/.icons/Custom/scrot.svg "Unsuccesful in Taking Screenshots"
+    fi
+}
+
+# Create the output directory if it doesn't exist
+if [[ ! -d "$output_dir" ]]; then
+    mkdir -p "$output_dir"
+fi
+
+# Loop to take 25 screenshots
+for ((i=1; i<=25; i++)); do
+    # Define the filename with current date and time
+    filename="$output_dir/Screenshot_$(date +'%Y-%m-%d_%H:%M:%S').png"
+
+    # Take a screenshot using scrot
+    scrot "$filename" --monitor 0 --quality 100 --silent && notify_user
+
+    # Wait for 0.1 seconds before taking the next screenshot
+    sleep 0.5
+done
+
+echo "Screenshots captured successfully in $output_dir"

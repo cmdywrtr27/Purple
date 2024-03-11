@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Output directory for screenshots
+#output_dir="/home/josh/Pictures/Screenshots"
+#file="Screenshot_${time}.png"
+#time=$(date +%Y-%m-%d_%H:%M:%-S)
+# Ensure the output directory exists
+#mkdir -p "$output_dir"
+
+notify_user() {
+    if [[ -e "$sspath" ]]; then
+        notify-send -u low -i $HOME/.icons/Custom/scrot.svg "Screenshot(s) Saved in ~/Pictures/Screenshots"
+    else notify-send -u low -i $HOME/.icons/Custom/scrot.svg "Unsuccesful in Capturing Screenshot"
+    fi
+}
+
+# Set the directory where screenshots will be saved
+ssdir="$HOME/Pictures/Screenshots"
+
+# Set the filename for the screenshot using the current date and time
+ssname="Screenshot_$(date '+%Y-%m-%d_%H:%M:%S').png"
+
+# Set the full path for the screenshot
+sspath="$ssdir/$ssname"
+
+# Use scrot to take the screenshot and save it to the specified path
+scrot "$sspath" --monitor 0 --quality 100 --silent && notify_user
+
+# Get the left monitor's coordinates and resolution using xrandr
+#left_monitor_info=$(xrandr --listmonitors | grep "0:")
+
+# Extract the left monitor's coordinates and resolution
+#left_monitor_x=$(echo "$left_monitor_info" | awk '{print $4}' | cut -d '/' -f 1)
+#left_monitor_y=$(echo "$left_monitor_info" | awk '{print $4}' | cut -d '/' -f 2)
+#left_monitor_width=$(echo "$left_monitor_info" | awk '{print $6}')
+#left_monitor_height=$(echo "$left_monitor_info" | awk '{print $8}')
+
+# Set the screenshot filename format
+#filename_format="Screenshot_%Y-%m-%d_%H:%M:%S.png"
+
+# Change directory to the output directory
+#cd "$output_dir"
+
+# Loop to take screenshots for 10 seconds
+#for ((i = 1; i <= 1; i++)); do
+#    filename="$output_dir/$file"
+    # Use scrot to take a screenshot of the left monitor
+#   scrot "$file" --monitor 0 --quality 100 --silent
+
+    #--exec 'mv $f /home/josh/Pictures/Screenshots'
+
+    # Wait for 1 second before taking the next screenshot
+#    sleep 1
+#done
