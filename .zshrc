@@ -20,7 +20,7 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' use-cache true
-zstyle ':completion:*' cache-path ~/.cache/zsh
+zstyle ':completion:*' cache-path $ZSH_CACHE_DIR
 zstyle ':completion:*' rehash true
 
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
@@ -42,8 +42,8 @@ zstyle -e ':completion:*:approximate:*' \
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:git*' formats '(%b)'
-zstyle ':vcs_info:git*' formats "%s  %r/%S %b (%a) %m%u%c "
+zstyle ':vcs_info:git*' formats '%B%F{#777777}(%b)%b%f'
+zstyle ':vcs_info:git*' actionformats '%B%F{#777777}(%s)-[%b|%a]%u%c-%b%f'
 
 zstyle :compinstall filename '~/.zshrc'
 
@@ -63,7 +63,6 @@ bindkey "^[[B" history-substring-search-down
 case $TERM in
   termite|*xterm*|rxvt|rxvt-unicode|rxvt-256color|rxvt-unicode-256color|(dt|k|E)term)
     precmd() {
-      add-zsh-hook
       vcs_info
       print -Pn "\e]0;%~\a"
     }
@@ -73,7 +72,6 @@ case $TERM in
     ;;
   screen|screen-256color)
     precmd() {
-      add-zsh-hook
       vcs_info
       print -Pn "\e]83;$1\a"
       print -Pn "\e]0;%L %~\a"
@@ -94,10 +92,10 @@ esac
 . $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . $ZDOTDIR/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 #. $ZDOTDIR/themes/agnoster-gaps.zsh
 #. $ZDOTDIR/themes/lines.zsh
-. $ZDOTDIR/themes/minimal.zsh
+#. $ZDOTDIR/themes/minimal.zsh
 #. $ZDOTDIR/themes/right.zsh
 #. $ZDOTDIR/themes/ninja.zsh
 #. $ZDOTDIR/themes/agkozak.zsh

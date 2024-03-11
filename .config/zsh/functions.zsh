@@ -179,7 +179,7 @@ update() {
     yay -Sy
     sleep 0.2
     figlet "updating system ..."
-    yay -Syu --noconfirm && yay -Qqe > ~/Documents/pacman\ and\ yay\ pkgs.txt
+    yay -Syu --noconfirm && yay -Qqe > ~/.arch_pkgs.txt
 }
 
 # Put a clock in top right corner (show-time)

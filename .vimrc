@@ -94,7 +94,7 @@ let g:lightline = {
       \ },
       \ 'component': {
       \   'absolutepath': '%f',
-      \   'lineinfo': '%l/%L:%c',
+      \   'lineinfo': ' %l/%L:%c',
       \   'paste': '%{&paste?"PASTE":""}',
       \   'gap': ''
       \ },
